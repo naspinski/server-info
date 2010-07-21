@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="D:\Documents and Settings\naspis\My Documents\Visual Studio 2010\Projects\ServerInfo\ServerInfo.Tests\bin\Debug\ServerInfo.Tests.dll" total="3" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2010-06-08" time="16:14:21">
+  <environment nunit-version="2.5.5.10112" clr-version="2.0.50727.3603" os-version="Microsoft Windows NT 5.1.2600 Service Pack 3" platform="Win32NT" cwd="C:\Program Files\NUnit 2.5.5\bin\net-2.0" machine-name="NSCCBEWS188" user="naspis" user-domain="NSCC" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="D:\Documents and Settings\naspis\My Documents\Visual Studio 2010\Projects\ServerInfo\ServerInfo.Tests\bin\Debug\ServerInfo.Tests.dll" executed="True" result="Success" success="True" time="103.566" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="ServerInfo" executed="True" result="Success" success="True" time="103.566" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="Tests" executed="True" result="Success" success="True" time="103.566" asserts="0">
+            <results>
+              <test-suite type="Namespace" name="DomainModel" executed="True" result="Success" success="True" time="103.566" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="DisplayTests" executed="True" result="Success" success="True" time="0.234" asserts="0">
+                    <results>
+                      <test-case name="ServerInfo.Tests.DomainModel.DisplayTests.ActivePropertyNames_works" executed="True" result="Success" success="True" time="0.219" asserts="1" />
+                      <test-case name="ServerInfo.Tests.DomainModel.DisplayTests.Display_intialization_works" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+                    </results>
+                  </test-suite>
+                  <test-suite type="TestFixture" name="ServerQueryTests" executed="True" result="Success" success="True" time="103.316" asserts="0">
+                    <results>
+                      <test-case name="ServerInfo.Tests.DomainModel.ServerQueryTests.Query_works" executed="True" result="Success" success="True" time="103.316" asserts="0" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

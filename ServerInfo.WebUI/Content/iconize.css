@@ -1,0 +1,83 @@
+/* Iconize 0.5 */
+
+.name a{display:block; padding:2px 0;}
+/* extensions */
+
+.name i.doc, .name i.rtf, .name i.docx { background-position: 0 -1350px; }
+.name i.txt {background-position: -74px -1126px;}
+.name i.sql {background-position: -74px -928px;}
+.name i.xml, .name i.cs, .name i.asax, .name i.config, .name i.resx {background-position: -74px -1324px;}
+
+
+.name i.iso {background-position: 0 -1944px;}
+.name i.xls, .name i.xlsx {background-position: -74px -1258px;}
+.name i.rss, .name i.atom { background-position: 0 -1548px;}
+.name i.phps { background-position: -74px -466px;}
+.name i.vcard { background-position: -74px -1192px;}
+.name i.torrent { background-position: -74px -994px;}
+.name i.opml { background-position: -74px -334px;}
+.name i.bat{background-position: 0 -1020px;} 
+.name i.exe { background-position: 0 -1416px;}
+.name i.pps, .name i.ppt, .name i.pptx { background-position: -74px -730px;}
+.name i.mmc, .name i.msc { background-position: -74px -132px;}
+.name i.pdf { background-position: -74px -400px;}
+.name i.xpi { background-position: -74px -598px;}
+.name i.fla, .name i.swf { background-position: 0 -1680px;}
+.name i.zip, .name i.rar, .name i.gzip, .name i.bzip, .name i.ace { background-position: 0 -954px;}
+.name i.ical { background-position: 0 -1812px;}
+.name i.css { background-position: 0 -1218px;}
+.name i.ttf { background-position: -74px -1060px;}
+.name i.jpg, .name i.gif, .name i.png, .name i.bmp, .name i.jpeg, .name i.svg, .name i.eps {background-position: -74px -532px;}
+.name i.mov, .name i.wmv, .name i.mp4, .name i.avi, .name i.mpg { background-position: 0 -1614px;}
+.name i.mp3, .name i.wav, .name i.ogg, .name i.wma, .name i.m4a { background-position: -74px -268px;}
+.name i.htm, .name i.asp, .name i.aspx, .name i.html, .name i.php, .name i.cgi, .name i.cfm { background-position: -74px -1456px; }
+
+/* use this class to make sure that images won't get iconized */
+
+.imageLink {
+	padding-right: 0px !important;
+	background: none !important;
+}
+
+
+
+.sprite-icon_aim { background-position: 0 -888px; } 
+.sprite-icon_archive { background-position: 0 -954px; } 
+.sprite-icon_bat { background-position: 0 -1020px; } 
+.sprite-icon_call { background-position: 0 -1086px; } 
+.sprite-icon_chat { background-position: 0 -1152px; } 
+.sprite-icon_css { background-position: 0 -1218px; } 
+.sprite-icon_dmg { background-position: 0 -1284px; } 
+.sprite-icon_doc { background-position: 0 -1350px; } 
+.sprite-icon_exe { background-position: 0 -1416px; } 
+.sprite-icon_external { background-position: 0 -1482px; } 
+.sprite-icon_feed { background-position: 0 -1548px; } 
+.sprite-icon_film { background-position: 0 -1614px; } 
+.sprite-icon_flash { background-position: 0 -1680px; } 
+.sprite-icon_gadugadu { background-position: 0 -1746px; } 
+.sprite-icon_ical { background-position: 0 -1812px; } 
+.sprite-icon_icq { background-position: 0 -1878px; } 
+.sprite-icon_iso { background-position: 0 -1944px; } 
+.sprite-icon_jabber { background-position: -74px 0; } 
+.sprite-icon_mailto { background-position: -74px -66px; } 
+.sprite-icon_mmc { background-position: -74px -132px; } 
+.sprite-icon_msn { background-position: -74px -202px; } 
+.sprite-icon_music { background-position: -74px -268px; } 
+.sprite-icon_opml { background-position: -74px -334px; } 
+.sprite-icon_pdf { background-position: -74px -400px; } 
+.sprite-icon_phps { background-position: -74px -466px; } 
+.sprite-icon_pic { background-position: -74px -532px; } 
+.sprite-icon_plugin { background-position: -74px -598px; } 
+.sprite-icon_popup { background-position: -74px -664px; } 
+.sprite-icon_pps { background-position: -74px -730px; } 
+.sprite-icon_search { background-position: -74px -796px; } 
+.sprite-icon_skype { background-position: -74px -862px; } 
+.sprite-icon_sql { background-position: -74px -928px; } 
+.sprite-icon_torrent { background-position: -74px -994px; } 
+.sprite-icon_ttf { background-position: -74px -1060px; } 
+.sprite-icon_txt { background-position: -74px -1126px; } 
+.sprite-icon_vcard { background-position: -74px -1192px; } 
+.sprite-icon_xls { background-position: -74px -1258px; } 
+.sprite-icon_xml { background-position: -74px -1324px; } 
+.sprite-icon_yim { background-position: -74px -1390px; } 
+.sprite-z_ff { background-position: -74px -1456px; } 

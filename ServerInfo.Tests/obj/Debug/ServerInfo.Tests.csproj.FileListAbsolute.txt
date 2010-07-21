@@ -1,0 +1,10 @@
+d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.Tests\obj\Debug\ResolveAssemblyReference.cache
+d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.Tests\bin\Debug\ServerInfo.Tests.dll
+d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.Tests\bin\Debug\ServerInfo.Tests.pdb
+d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.Tests\bin\Debug\nunit.framework.dll
+d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.Tests\bin\Debug\ServerInfo.DomainModel.dll
+d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.Tests\bin\Debug\ServerInfo.DomainModel.pdb
+d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.Tests\obj\Debug\ServerInfo.Tests.dll
+d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.Tests\obj\Debug\ServerInfo.Tests.pdb
+d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.Tests\bin\Debug\Naspinski.Utilities.dll
+d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.Tests\bin\Debug\System.Linq.Dynamic.dll

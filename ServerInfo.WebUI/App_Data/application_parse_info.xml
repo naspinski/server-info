@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<information>
+    <directories_to_ignore>
+        <directory>Accessories</directory>
+        <directory>Administrative Tools</directory>
+        <directory>Startup</directory>
+        <directory>Windows Media</directory>
+    </directories_to_ignore>
+</information>

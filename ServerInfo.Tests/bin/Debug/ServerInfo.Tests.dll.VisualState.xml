@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
+  <TopNode>[0-1005]D:\Documents and Settings\naspis\My Documents\Visual Studio 2010\Projects\ServerInfo\ServerInfo.Tests\bin\Debug\ServerInfo.Tests.dll</TopNode>
+  <SelectedNode>[0-1008]ServerInfo.Tests.DomainModel</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1005]D:\Documents and Settings\naspis\My Documents\Visual Studio 2010\Projects\ServerInfo\ServerInfo.Tests\bin\Debug\ServerInfo.Tests.dll" Expanded="true" />
+    <Node UniqueName="[0-1006]ServerInfo" Expanded="true" />
+    <Node UniqueName="[0-1007]ServerInfo.Tests" Expanded="true" />
+    <Node UniqueName="[0-1008]ServerInfo.Tests.DomainModel" Expanded="true" />
+    <Node UniqueName="[0-1002]ServerInfo.Tests.DomainModel.DisplayTests" Expanded="true" />
+    <Node UniqueName="[0-1000]ServerInfo.Tests.DomainModel.ServerQueryTests" Expanded="true" />
+  </Nodes>
+</VisualState>

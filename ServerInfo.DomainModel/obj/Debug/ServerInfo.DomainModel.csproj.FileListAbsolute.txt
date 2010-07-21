@@ -1,0 +1,7 @@
+d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.DomainModel\obj\Debug\ResolveAssemblyReference.cache
+d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.DomainModel\bin\Debug\ServerInfo.DomainModel.dll
+d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.DomainModel\bin\Debug\ServerInfo.DomainModel.pdb
+d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.DomainModel\obj\Debug\ServerInfo.DomainModel.dll
+d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.DomainModel\obj\Debug\ServerInfo.DomainModel.pdb
+d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.DomainModel\bin\Debug\Naspinski.Utilities.dll
+d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.DomainModel\bin\Debug\System.Linq.Dynamic.dll

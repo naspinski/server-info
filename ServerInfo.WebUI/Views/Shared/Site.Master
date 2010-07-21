@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title><asp:ContentPlaceHolder ID="HeadTitle" runat="server" /></title>
+    <link href="~/Content/reset.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../../Scripts/jquery.js"></script>
+    <script type="text/javascript" src="../../Scripts/jqModal.js"></script>
+</head>
+
+<body>
+<div id="background">
+    <div class="page">
+        <div id="header">
+            <div id="title">
+                <h1><%= Html.ActionLink("ServerInfo", "Index", "Home") %></h1>
+                <ul id="main_navigation" class="list_horizontal">
+
+                </ul>
+                <div id="messages">
+                    <% if (TempData["error"] != null){ %> <div class="error"><i></i><%= Html.Encode(TempData["error"]) %></div> <% } %>
+                    <% if (TempData["success"] != null){ %> <div class="success"><i></i><%= Html.Encode(TempData["success"]) %></div> <% } %>
+                    <% if (TempData["warning"] != null){ %> <div class="warning"><i></i><%= Html.Encode(TempData["warning"]) %></div> <% } %>
+                </div>
+            </div>
+        </div>
+        
+        <div id="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            <div class="clear"></div>
+        </div>
+        <div id="footer">
+            <div>
+                <%= Html.ActionLink("Home", "Index", "Home") %> | 
+                <%= Html.ActionLink("Manual WMI Query", "Index", "WMI") %>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

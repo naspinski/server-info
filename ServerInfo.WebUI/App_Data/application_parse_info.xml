@@ -6,4 +6,11 @@
         <directory>Startup</directory>
         <directory>Windows Media</directory>
     </directories_to_ignore>
+    <databases_to_ignore>
+        <db_filename>master</db_filename>
+        <db_filename>model</db_filename>
+        <db_filename>msdbdata</db_filename>
+        <db_filename>mssqlsystemresource</db_filename>
+        <db_filename>tempdb</db_filename>
+    </databases_to_ignore>
 </information>

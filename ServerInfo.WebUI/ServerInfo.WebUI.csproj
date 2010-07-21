@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\application_parse_info.xml" />
+    <Content Include="App_Data\MY_Servers.xml" />
     <Content Include="App_Data\servers.xml" />
     <Content Include="App_Data\settings.xml" />
     <Content Include="Content\iconize.css" />
@@ -92,6 +93,7 @@
     <Content Include="Scripts\jquery.js" />
     <Content Include="Views\Action\New.aspx" />
     <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Home\Test.aspx" />
     <Content Include="Views\WMI\Index.aspx" />
     <Content Include="Views\WMI\Query.aspx" />
     <Content Include="Views\WMI\QueryInput.ascx" />

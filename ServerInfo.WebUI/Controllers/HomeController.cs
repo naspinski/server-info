@@ -4,6 +4,7 @@ using ServerInfo.DomainModel.XmlInterface;
 using ServerInfo.DomainModel.Entities;
 using System.Xml.Linq;
 using System;
+using System.Linq;
 using ServerInfo.WebUI.Models;
 using ServerInfo.DomainModel;
 

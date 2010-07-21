@@ -1,9 +1,0 @@
-d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.WebUI\obj\Debug\ResolveAssemblyReference.cache
-d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.WebUI\bin\ServerInfo.WebUI.dll
-d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.WebUI\bin\ServerInfo.WebUI.pdb
-d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.WebUI\bin\ServerInfo.DomainModel.dll
-d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.WebUI\bin\ServerInfo.DomainModel.pdb
-d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.WebUI\obj\Debug\ServerInfo.WebUI.dll
-d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.WebUI\obj\Debug\ServerInfo.WebUI.pdb
-d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.WebUI\bin\Naspinski.Utilities.dll
-d:\documents and settings\naspis\my documents\visual studio 2010\Projects\ServerInfo\ServerInfo.WebUI\bin\System.Linq.Dynamic.dll

@@ -32,5 +32,12 @@ namespace ServerInfo.DomainModel
         {
             tdd[type] = tdd[type] == null ? notification : tdd[type] + "; " + notification;
         }
+
+        public static IEnumerable<string> EnumerateSearchString(this string s)
+        {
+            if (string.IsNullOrEmpty(s))
+                return new List<string>();
+            return s.Replace(Environment.NewLine, ";").Split(new string[] { ";", Environment.NewLine, ",", "\n" }, StringSplitOptions.RemoveEmptyEntries).AsEnumerable();
+        }
     }
 }

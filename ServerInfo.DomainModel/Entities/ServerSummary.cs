@@ -73,15 +73,16 @@ namespace ServerInfo.DomainModel.Entities
         private string MakeList(IEnumerable<string> strings, IEnumerable<Website> websites = null, bool isOwners = false, string ip = "")
         {
             int count = 0;
-            string temp = "<ul class=\"mini\">";
+            string temp = "<ul class=\"mini\"" + (isOwners ? " id=\"ul__" + ip.Replace(".", "_") + "\"" : "" ) + ">";
             if (websites == null)
             {
                 foreach (string s in strings)
                 {
-                    temp += "<li>" + s;
+                    temp += "<li" + (isOwners ? " id=\"li__" + ip.Replace(".", "_") + "__" + count + "\"" : "") + ">" + s;
                     if (isOwners)
-                        temp += " <a href=\"#\" class=\"delete__" + ip.Replace(".", "_") + "__" + count++ + "\">delete</a>";
+                        temp += " <a href=\"#\" class=\"deleteOwner\" id=\"del__" + ip.Replace(".", "_") + "__" + count + "\">[X]</a>";
                     temp += "</li>";
+                    count++;
                 }
             }
             else
@@ -98,7 +99,7 @@ namespace ServerInfo.DomainModel.Entities
             }
             temp += "</ul>";
             if (isOwners)
-                temp += "<a class=\"newOwner\" href=\"#\">New</a>";
+                temp += "<a class=\"newOwner\" id=\"new__" + ip.Replace(".", "_") + "\" href=\"#\">[Add]</a>";
             return temp;
         }
 

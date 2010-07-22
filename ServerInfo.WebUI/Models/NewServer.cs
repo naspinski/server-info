@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Text.RegularExpressions;
+using ServerInfo.DomainModel;
 
 namespace ServerInfo.WebUI.Models
 {
@@ -10,15 +11,7 @@ namespace ServerInfo.WebUI.Models
     {
         public string Ip { get; set; }
         public string Owners { get; set; }
-        public IEnumerable<string> EnumerateOwners
-        {
-            get
-            {
-                if (string.IsNullOrEmpty(Owners))
-                    return new List<string>();
-                return Owners.Split(new string[] { ";", " ", "," }, StringSplitOptions.RemoveEmptyEntries).AsEnumerable();
-            }
-        }
+        public IEnumerable<string> EnumerateOwners { get { return Owners.EnumerateSearchString(); } }
 
         public string this[string propName]
         {

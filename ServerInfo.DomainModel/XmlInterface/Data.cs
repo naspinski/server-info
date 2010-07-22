@@ -36,12 +36,28 @@ namespace ServerInfo.DomainModel.XmlInterface
             return xDoc.Descendants("server").Where(x => x.Attribute("ip").Value.Equals(ip)).First();
         }
 
-        public static void AddOwnerTo(string pathToServerFile, string ip, string owner)
+        public static void AddOwnersTo(string pathToServerFile, string ip, IEnumerable<string> owners)
         {
-
+            XDocument xDoc = XDocument.Load(pathToServerFile);
+            xDoc.GetServerXElement(ip).Descendants("owners").First().AddOwners(owners);
+            xDoc.Save(pathToServerFile);
         }
 
-        public static void AddOwner(this XElement xe, string owner)
+        public static void RemoveOwnerFrom(string pathToServerFile, string ip, int number)
+        {
+            XDocument xDoc = XDocument.Load(pathToServerFile);
+            xDoc.GetServerXElement(ip).RemoveOwner(number);
+            xDoc.Save(pathToServerFile);
+        }
+
+        private static void RemoveOwner(this XElement xe, int number)
+        { xe.Descendants("owner").Skip(number).Take(1).First().Remove(); }
+
+
+        private static void AddOwners(this XElement xe, IEnumerable<string> owners)
+        { foreach (string s in owners) xe.AddOwner(s); }
+
+        private static void AddOwner(this XElement xe, string owner)
         {
             if (xe.Descendants("owner").Where(x => x.Value.ToLower().Equals(owner.ToLower())).Count() > 0)
                 throw new InvalidOperationException(owner + " alreaday exists");
@@ -49,9 +65,7 @@ namespace ServerInfo.DomainModel.XmlInterface
             xe.Add(new XElement("owner", owner));
         }
 
-        public static XElement GetOwner(this XElement xe, string owner)
-        {
-            return xe.Descendants("owner").Where(x => x.Value.ToLower().Equals(owner.ToLower())).First();
-        }
+        private static XElement GetOwner(this XElement xe, string owner)
+        { return xe.Descendants("owner").Where(x => x.Value.ToLower().Equals(owner.ToLower())).First(); }
     }
 }

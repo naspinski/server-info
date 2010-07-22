@@ -8,7 +8,7 @@
                 <%= Html.TextBox("Ip") %>
             </div>
             <div>
-                <label for="Ip"><%= Html.ValidationMessage("Owners") %>Owners</label>
+                <label for="Owners"><%= Html.ValidationMessage("Owners") %>Owners</label>
                 <%= Html.TextArea("Owners") %>
             </div>
             <div class="align_center">

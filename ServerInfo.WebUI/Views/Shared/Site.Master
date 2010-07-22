@@ -4,10 +4,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title><asp:ContentPlaceHolder ID="HeadTitle" runat="server" /></title>
-    <link href="~/Content/reset.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="../../Scripts/jquery.js"></script>
-    <script type="text/javascript" src="../../Scripts/jqModal.js"></script>
+    <link href="<%= Url.Content("~/Content/reset.css") %>" rel="stylesheet" type="text/css" />
+    <link href="<%= Url.Content("~/Content/Site.css") %>" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="<%= Url.Content("~/Scripts/jquery.js") %>"></script>
+    <script type="text/javascript" src="<%= Url.Content("~/Scripts/jqModal.js") %>"></script>
+    <script type="text/javascript" src="<%= Url.Content("~/Scripts/base.js") %>"></script>
 </head>
 
 <body>

@@ -47,11 +47,67 @@
         </fieldset>
     </div>
 
+    <div id="test"></div>
+
     <div id="modal" class="jqmWindow">loading...</div>
+    
+    <div id="newOwner" class="jqmWindow">
+        <div>
+            <div>
+                <%= Html.Hidden("NewOwnerId") %>
+                <label for="NewOwners">Add Owners</label>
+                <%= Html.TextArea("NewOwners") %>
+            </div>
+            <div class="align_center">
+                <input type="button" value="submit" id="submitNewOwners" />
+                <input type="button" value="cancel" class="jqmClose" />
+            </div>
+        </div>
+    </div>
 
     <script type="text/javascript">
         $().ready(function () {
-            $('#modal').jqm({ ajax: '/Action/New', trigger: $('#aNew') });
+            $('#modal').jqm({
+                ajax: '/Action/New',
+                trigger: $('#aNew'),
+                onShow: function (h) { h.w.slideDown(); },
+                onHide: function (h) { h.w.slideUp('medium', function () { if (h.o) h.o.remove(); }); }
+            });
+
+            $('.newOwner').each(function () {
+                $('#NewOwnerId').val($(this).attr('id'));
+            });
+
+            Modal($('#newOwner'), $('.newOwner'));
+
+            $('#submitNewOwners').click(function () {
+                $.ajax({
+                    type: 'POST',
+                    url: '<%= Url.Content("~/Ajax/NewOwners.ashx") %>',
+                    data: { value: $('#NewOwners').val(), id: $('#NewOwnerId').val() },
+                    success: function (data) {
+                        $('#ul__' + $('#NewOwnerId').val().split('__')[1]).append(data);
+                        $('#NewOwners').val('');
+                    }
+                });
+                $('#newOwner').jqmHide();
+            });
+
+            var changeCount = 0; //useed to make sure it deletes the right owner if done successively
+
+            $('.deleteOwner').click(function () {
+                $.ajax({
+                    type: 'POST',
+                    url: '<%= Url.Content("~/Ajax/DeleteOwner.ashx") %>',
+                    data: { id: $(this).attr('id'), changeCount: changeCount  },
+                    success: function (data) {
+                        $(data).slideUp();
+                        changeCount++;
+                    }
+                });
+            });
+
+
         });
     </script>
 </asp:Content>

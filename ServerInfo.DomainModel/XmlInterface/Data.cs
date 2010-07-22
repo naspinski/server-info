@@ -21,7 +21,7 @@ namespace ServerInfo.DomainModel.XmlInterface
             try
             {
                 XDocument xDoc = XDocument.Load(pathToServerFile);
-                xDoc.Descendants("server").Where(x => x.Attribute("ip").Value.Equals(ip)).First().Remove();
+                xDoc.GetServerXElement(ip).Remove();
                 xDoc.Save(pathToServerFile);
                 tdd.AddWarning(ip + " removed");
             }
@@ -29,6 +29,29 @@ namespace ServerInfo.DomainModel.XmlInterface
             {
                 tdd.AddError(ex.Message);
             }
+        }
+
+        public static XElement GetServerXElement(this XDocument xDoc, string ip)
+        {
+            return xDoc.Descendants("server").Where(x => x.Attribute("ip").Value.Equals(ip)).First();
+        }
+
+        public static void AddOwnerTo(string pathToServerFile, string ip, string owner)
+        {
+
+        }
+
+        public static void AddOwner(this XElement xe, string owner)
+        {
+            if (xe.Descendants("owner").Where(x => x.Value.ToLower().Equals(owner.ToLower())).Count() > 0)
+                throw new InvalidOperationException(owner + " alreaday exists");
+
+            xe.Add(new XElement("owner", owner));
+        }
+
+        public static XElement GetOwner(this XElement xe, string owner)
+        {
+            return xe.Descendants("owner").Where(x => x.Value.ToLower().Equals(owner.ToLower())).First();
         }
     }
 }

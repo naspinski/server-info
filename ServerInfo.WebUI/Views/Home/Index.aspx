@@ -27,7 +27,8 @@
                            { %>
                                <td><%= server.Strings[pName] %></td>
                         <% } %>
-                        <td class="no_border"><%= Html.ActionLink(" ", "Delete", 
+                        <td class="no_border">
+                            <%= Html.ActionLink(" ", "Delete", 
                                 new { Ip = server.Strings["Ip"], }, 
                                 new { @class = "delete", title = "delete" }) %>
                         </td>

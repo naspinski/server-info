@@ -24,7 +24,7 @@ namespace ServerInfo.DomainModel.Entities
             {
                 Dictionary<string, string> strings = new Dictionary<string, string>()
                 { {"Name", Name}, {"Ip", Ip}, {"Os", Os} };
-                strings.Add("Owners", MakeList(Owners));
+                strings.Add("Owners", MakeList(Owners, null, true, Ip));
                 strings.Add("Applications", MakeList(Applications));
                 strings.Add("Databases", MakeList(Databases));
                 strings.Add("Websites", MakeList(null, Websites));
@@ -50,7 +50,6 @@ namespace ServerInfo.DomainModel.Entities
 
         public XElement ToXElement()
         {
-            //Websites = new List<Website>();
             return new XElement("server",
                 new XAttribute("ip", Ip),
                 new XAttribute("name", Name),
@@ -59,7 +58,6 @@ namespace ServerInfo.DomainModel.Entities
                 new XElement("applications", Applications.Select(x => new XElement("application", x))),
                 new XElement("databases", Databases.Select(x => new XElement("database", x))),
                 new XElement("websites", Websites.Select(x => new XElement("website", new XAttribute("tcp", (x.Tcp == null ? "" : x.Tcp.ToString())), new XAttribute("ssl", (x.Ssl == null ? "" : x.Ssl.ToString())), x.Name)))
-                //new XElement("websites", Websites.Select(x => new XElement("website", new XAttribute("tcp", "90"), new XAttribute("ssl", "443"), x.Name)))
                 );
         }
 
@@ -72,24 +70,35 @@ namespace ServerInfo.DomainModel.Entities
             xDoc.Save(pathToXmlFile);
         }
 
-        private string MakeList(IEnumerable<string> strings, IEnumerable<Website> websites = null)
+        private string MakeList(IEnumerable<string> strings, IEnumerable<Website> websites = null, bool isOwners = false, string ip = "")
         {
+            int count = 0;
             string temp = "<ul class=\"mini\">";
             if (websites == null)
-                { foreach (string s in strings) temp += "<li>" + s + "</li>"; }
+            {
+                foreach (string s in strings)
+                {
+                    temp += "<li>" + s;
+                    if (isOwners)
+                        temp += " <a href=\"#\" class=\"delete__" + ip.Replace(".", "_") + "__" + count++ + "\">delete</a>";
+                    temp += "</li>";
+                }
+            }
             else
-            { 
+            {
                 foreach (Website w in websites)
-                    temp += "<li>" + w.Name + "<span class=\"ports\">" + 
-                        (w.Tcp != null 
+                    temp += "<li>" + w.Name + "<span class=\"ports\">" +
+                        (w.Tcp != null
                             ? " <a href=\"http://" + Ip + ":" + w.Tcp + "\">TCP:" + w.Tcp + "</a>"
-                            : string.Empty) + 
-                        (w.Ssl != null 
+                            : string.Empty) +
+                        (w.Ssl != null
                             ? " <a href=\"https://" + Ip + ":" + w.Ssl + "\">SSL:" + w.Ssl + "</a>"
                             : string.Empty) +
-                        "</span></li>"; 
+                        "</span></li>";
             }
             temp += "</ul>";
+            if (isOwners)
+                temp += "<a class=\"newOwner\" href=\"#\">New</a>";
             return temp;
         }
 

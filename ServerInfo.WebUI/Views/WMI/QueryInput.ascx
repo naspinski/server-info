@@ -3,7 +3,7 @@
     <% using (Html.BeginForm("Query", "WMI"))
         { %>
         <fieldset class="clear">
-            <legend><i class="arrow_blue"></i>Manual WMI Query</legend>
+            <legend>Manual WMI Query</legend>
             <div>
                 <label for="ip">IP to Query</label>
                 <%= Html.TextBox("ip", TempData["ip"])%>

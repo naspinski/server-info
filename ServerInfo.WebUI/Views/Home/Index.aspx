@@ -4,7 +4,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div id="content">
         <fieldset class="clear">
-            <legend><i class="arrow_blue"></i>recent cached data [<%= Model.Timestamp.ToString() %>]</legend>
+            <% if(Model.Servers.Count() == 0) { %>
+                <legend><br />please add a <a href="#" class="newIp">new ip</a></legend>
+            <% } else { %>
+            <legend>last updated [<%= Model.Timestamp.ToString() %>]</legend>
             <table>
                 <tr>
                     <% foreach (string pName in Model.Display.ActivePropertyNames)
@@ -35,14 +38,15 @@
                     </tr>
                 <% } %>
             </table>
+            <% } %>
         </fieldset>
     </div>
     <div id="sidebar">
         <fieldset class="box">
             <legend>actions</legend>
             <ul class="list_vertical">
-                <li><%= Html.ActionLink("Refresh", "Refresh") %></li>
-                <li><%= Html.ActionLink("New IP", "New", "Action", null, new { id="aNew" })  %></li>
+                <li><%= Html.ActionLink("refresh", "Refresh") %></li>
+                <li><%= Html.ActionLink("new ip", "New", "Action", null, new { id="aNew", @class="newIp" })  %></li>
             </ul>
         </fieldset>
     </div>
@@ -69,7 +73,7 @@
         $().ready(function () {
             $('#modal').jqm({
                 ajax: '/Action/New',
-                trigger: $('#aNew'),
+                trigger: $('.newIp'),
                 onShow: function (h) { h.w.slideDown(); },
                 onHide: function (h) { h.w.slideUp('medium', function () { if (h.o) h.o.remove(); }); }
             });

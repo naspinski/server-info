@@ -16,7 +16,9 @@ namespace ServerInfo.WebUI.Controllers
         // GET: /Home/
         public ViewResult Index(string SortBy, string SortDir)
         {
-            return View(new DisplayAndServers(Server.MapPath(Settings.DataPaths.Servers), Server.MapPath(Settings.DataPaths.Settings), SortBy, SortDir));
+            var view = new DisplayAndServers(Server.MapPath(Settings.DataPaths.Servers), Server.MapPath(Settings.DataPaths.Settings), SortBy, SortDir);
+            if (view.Servers.Count() == 0) TempData.AddWarning("no servers in the system");
+            return View(view);
         }
 
         // GET: /Delete/{Ip}

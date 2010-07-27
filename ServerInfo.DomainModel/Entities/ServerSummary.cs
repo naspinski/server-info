@@ -80,7 +80,7 @@ namespace ServerInfo.DomainModel.Entities
                 {
                     temp += "<li" + (isOwners ? " id=\"li__" + ip.Replace(".", "_") + "__" + count + "\"" : "") + ">" + s;
                     if (isOwners)
-                        temp += " <a href=\"#\" class=\"deleteOwner\" id=\"del__" + ip.Replace(".", "_") + "__" + count + "\">[X]</a>";
+                        temp += "<a href=\"#\" class=\"deleteOwner\" id=\"del__" + ip.Replace(".", "_") + "__" + count + "\">[X]</a>";
                     temp += "</li>";
                     count++;
                 }

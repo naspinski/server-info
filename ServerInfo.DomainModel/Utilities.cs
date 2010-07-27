@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.Mvc;
+using System.Net;
 
 namespace ServerInfo.DomainModel
 {
@@ -33,11 +34,17 @@ namespace ServerInfo.DomainModel
             tdd[type] = tdd[type] == null ? notification : tdd[type] + "; " + notification;
         }
 
-        public static IEnumerable<string> EnumerateSearchString(this string s)
+        public static IEnumerable<string> EnumerateSearchString(this string s, bool splitSpaces)
         {
             if (string.IsNullOrEmpty(s))
                 return new List<string>();
-            return s.Replace(Environment.NewLine, ";").Split(new string[] { ";", Environment.NewLine, ",", "\n" }, StringSplitOptions.RemoveEmptyEntries).AsEnumerable();
+            List<string> delimiters = new List<string>() { ";", Environment.NewLine, ",", "\n" };
+            if(splitSpaces) delimiters.Add(" ");
+            return s.Replace(Environment.NewLine, ";").Split(delimiters.ToArray(), StringSplitOptions.RemoveEmptyEntries).AsEnumerable();
+        }
+        public static IEnumerable<string> EnumerateSearchString(this string s)
+        {
+            return s.EnumerateSearchString(false);
         }
     }
 }

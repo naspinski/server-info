@@ -18,6 +18,7 @@ namespace ServerInfo.WebUI.HtmlHelpers
             sb.AppendLine("    <li> - <a href=\"http://msdn.microsoft.com/en-us/library/aa394606(VS.85).aspx\">WQL (SQL for WMI)</a></li>");
             sb.AppendLine("    <li> - <a href=\"http://msdn.microsoft.com/en-us/library/aa394572(v=VS.85).aspx\">WMI Reference</a></li>");
             sb.AppendLine("<ul>");
+            sb.AppendLine("<br />ex: <b>SELECT * FROM Win32_LogicalDisk</b> will get all the drive information for the specified ip");
             return sb.ToString();
         }
     }

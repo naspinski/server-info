@@ -69,6 +69,9 @@
     <Compile Include="Ajax\DeleteOwner.ashx.cs">
       <DependentUpon>DeleteOwner.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Ajax\FlipDisplaySetting.ashx.cs">
+      <DependentUpon>FlipDisplaySetting.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Ajax\NewOwners.ashx.cs">
       <DependentUpon>NewOwners.ashx</DependentUpon>
     </Compile>
@@ -78,6 +81,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HtmlHelpers\NavigationHelper.cs" />
     <Compile Include="HtmlHelpers\WMIInfoHelper.cs" />
     <Compile Include="Models\DisplayAndServers.cs" />
     <Compile Include="Models\NewServer.cs" />
@@ -99,6 +103,7 @@
     <Content Include="Scripts\jqModal.js" />
     <Content Include="Scripts\jquery.js" />
     <Content Include="Views\Action\New.aspx" />
+    <Content Include="Views\Home\Display.aspx" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Home\Test.aspx" />
     <Content Include="Views\WMI\Index.aspx" />
@@ -139,6 +144,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ajax\DeleteOwner.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ajax\FlipDisplaySetting.ashx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

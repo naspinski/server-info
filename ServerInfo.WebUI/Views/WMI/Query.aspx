@@ -10,6 +10,7 @@
         </fieldset>
     </div>
     <div id="sidebar">
+        <%= Html.Navigation(Request.RequestContext.RouteData.Values) %>
         <fieldset class="box">
             <legend>info</legend>
             <%= Html.WMIInfo() %>

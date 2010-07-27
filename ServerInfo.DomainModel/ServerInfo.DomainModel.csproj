@@ -66,6 +66,7 @@
     <Compile Include="Entities\Website.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XmlInterface\Data.cs" />
+    <Compile Include="XmlInterface\XmlSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Naspinski.Utilities.dll" />

@@ -21,7 +21,7 @@ namespace ServerInfo.WebUI.Ajax
                 string ip = split[1].Replace("_", ".");
                 IEnumerable<string> owners = context.Request.Form["value"].EnumerateSearchString();
                 Data.AddOwnersTo(System.Web.HttpContext.Current.Server.MapPath(Settings.DataPaths.Servers), ip, owners);
-                foreach (string owner in owners) context.Response.Write("<li>" + owner + "</li>");
+                foreach (string owner in owners) context.Response.Write("<li class=\"new\">" + owner + "</li>");
             }
             catch (Exception ex) { context.Response.Write("error: " + ex.Message);  }
         }

@@ -41,5 +41,24 @@ namespace ServerInfo.WebUI.Controllers
             }
             return RedirectToAction("Index");
         }
+
+        public ActionResult Display()
+        {
+            return View(new Display(XDocument.Load(Server.MapPath(Settings.DataPaths.Settings))));
+        }
+
+
+        public ActionResult Test()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Test(FormCollection post)
+        {
+            if (Request.IsAjaxRequest())
+                return Content("WEEEEEEEEEEEEEEEEE!");
+            return View();
+        }
     }
 }

@@ -43,15 +43,15 @@ namespace ServerInfo.DomainModel.XmlInterface
             xDoc.Save(pathToServerFile);
         }
 
-        public static void RemoveOwnerFrom(string pathToServerFile, string ip, int number)
+        public static void RemoveOwnerFrom(string pathToServerFile, string ip, string name)
         {
             XDocument xDoc = XDocument.Load(pathToServerFile);
-            xDoc.GetServerXElement(ip).RemoveOwner(number);
+            xDoc.GetServerXElement(ip).RemoveOwner(name);
             xDoc.Save(pathToServerFile);
         }
 
-        private static void RemoveOwner(this XElement xe, int number)
-        { xe.Descendants("owner").Skip(number).Take(1).First().Remove(); }
+        private static void RemoveOwner(this XElement xe, string name)
+        { xe.Descendants("owner").Where(x => x.Value.Equals(name)).First().Remove(); }
 
 
         private static void AddOwners(this XElement xe, IEnumerable<string> owners)

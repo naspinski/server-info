@@ -36,10 +36,22 @@
         <div id="footer">
             <div>
                 <%= Html.ActionLink("Home", "Index", "Home") %> | 
+                <%= Html.ActionLink("Display Options", "Display", "Home") %> | 
                 <%= Html.ActionLink("Manual WMI Query", "Index", "WMI") %>
+                <br />
+                &copy;2010 <%= DateTime.Now.Year > 2010 ? "- " + DateTime.Now.Year : "" %> <a href="http://naspinski.net">Stan Naspinski</a>
             </div>
         </div>
     </div>
 </div>
+<div id="loading">Working...</div>
+<script type="text/javascript">
+    $().ready(function () {
+        $('#loading')
+        .bind("ajaxSend", function() { $(this).show();})
+        .bind("ajaxComplete", function() { $(this).hide();})
+        .hide();
+    });
+</script>
 </body>
 </html>

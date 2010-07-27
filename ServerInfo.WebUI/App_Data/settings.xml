@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <settings>
-    <display>
-        <Name>true</Name>
-        <Ip>true</Ip>
-        <Os>true</Os>
-        <Owners>true</Owners>
-        <Applications>true</Applications>
-        <Databases>true</Databases>
-        <Websites>true</Websites>
-    </display>
+  <display>
+    <Name>True</Name>
+    <Ip>True</Ip>
+    <Os>True</Os>
+    <Owners>True</Owners>
+    <Applications>True</Applications>
+    <Databases>True</Databases>
+    <Websites>True</Websites>
+  </display>
 </settings>

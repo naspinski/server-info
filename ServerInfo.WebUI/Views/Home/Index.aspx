@@ -1,13 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<ServerInfo.WebUI.Models.DisplayAndServers>" %>
+<%@ Import Namespace="ServerInfo.WebUI.HtmlHelpers" %>
 <%@Import Namespace="System.Reflection" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div id="content">
         <fieldset class="clear">
             <% if(Model.Servers.Count() == 0) { %>
-                <legend><br />please add a <a href="#" class="newIp">new ip</a></legend>
+                <legend><br />Please add a <a href="#" class="newIp">New Ip Address</a></legend>
             <% } else { %>
-            <legend>last updated [<%= Model.Timestamp.ToString() %>]</legend>
+            <legend>Last Updated [<%= Model.Timestamp.ToString() %>]</legend>
             <table>
                 <tr>
                     <% foreach (string pName in Model.Display.ActivePropertyNames)
@@ -42,6 +43,7 @@
         </fieldset>
     </div>
     <div id="sidebar">
+        <%= Html.Navigation(Request.RequestContext.RouteData.Values) %>
         <fieldset class="box">
             <legend>actions</legend>
             <ul class="list_vertical">
@@ -78,7 +80,7 @@
                 onHide: function (h) { h.w.slideUp('medium', function () { if (h.o) h.o.remove(); }); }
             });
 
-            $('.newOwner').each(function () {
+            $('.newOwner').click(function () {
                 $('#NewOwnerId').val($(this).attr('id'));
             });
 
@@ -92,6 +94,7 @@
                     success: function (data) {
                         $('#ul__' + $('#NewOwnerId').val().split('__')[1]).append(data);
                         $('#NewOwners').val('');
+                        FlashFade($('li.new'), 'green');
                     }
                 });
                 $('#newOwner').jqmHide();
@@ -103,7 +106,7 @@
                 $.ajax({
                     type: 'POST',
                     url: '<%= Url.Content("~/Ajax/DeleteOwner.ashx") %>',
-                    data: { id: $(this).attr('id'), changeCount: changeCount  },
+                    data: { id: $(this).attr('id'), name: $(this).parent().text() },
                     success: function (data) {
                         $(data).slideUp();
                         changeCount++;

@@ -78,6 +78,7 @@
     <Compile Include="Controllers\ActionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\WMIController.cs" />
+    <Compile Include="DalBridge.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

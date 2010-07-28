@@ -5,6 +5,7 @@ using System.Text;
 using ServerInfo.DomainModel.Entities;
 using System.Web.Mvc;
 using System.Xml.Linq;
+using System.Text.RegularExpressions;
 
 namespace ServerInfo.DomainModel.XmlInterface
 {
@@ -12,7 +13,7 @@ namespace ServerInfo.DomainModel.XmlInterface
     {
         public static void NewServerSummaries(IEnumerable<string> ips, string pathToServerFile)
         {
-            foreach (string ip in ips.Distinct().Where(x => !string.IsNullOrWhiteSpace(x)))
+            foreach (string ip in ips.Distinct().Where(x => !string.IsNullOrWhiteSpace(x) && Regex.IsMatch(x, Utilities.IpRegEx)))
                 NewServerSummary(ip, new List<string>(), pathToServerFile);
         }
 

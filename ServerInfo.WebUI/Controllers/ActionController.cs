@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ServerInfo.WebUI.Models;
-using ServerInfo.DomainModel.XmlInterface;
 using ServerInfo.DomainModel;
 
 namespace ServerInfo.WebUI.Controllers
@@ -30,7 +29,7 @@ namespace ServerInfo.WebUI.Controllers
         {
             try
             {
-                Data.NewServerSummary(newServer.Ip, newServer.EnumerateOwners, Server.MapPath(Settings.DataPaths.Servers));
+                DalBridge.ServerSummaries.NewIp(newServer.Ip, newServer.EnumerateOwners);
                 TempData.AddSuccess(newServer.Ip + " added to system");
             }
             catch(Exception ex)
@@ -45,7 +44,7 @@ namespace ServerInfo.WebUI.Controllers
         {
             try
             {
-                Settings.ServerSummaries.NewIps(form["Ips"].EnumerateSearchString(true));
+                DalBridge.ServerSummaries.NewIps(form["Ips"].EnumerateSearchString(true));
                 TempData.AddSuccess("new ips successfully added to system");
             }
             catch (Exception ex)

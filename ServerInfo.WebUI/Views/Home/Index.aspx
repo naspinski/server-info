@@ -6,7 +6,11 @@
     <div id="content">
         <fieldset class="clear">
             <% if(Model.Servers.Count() == 0) { %>
-                <legend><br />Please add a <a href="#" class="newIp">New Ip Address</a></legend>
+                <legend>
+                    <br />Please add a
+                    <%= Html.ActionLink("new ip", "New", "Action", null, new { @class="newIp" })  %> or 
+                    <%= Html.ActionLink("bunch of new ips", "BatchNew", "Action", null, new { @class="newIps" })  %>
+                </legend>
             <% } else { %>
             <legend>Last Updated [<%= Model.Timestamp.ToString() %>]</legend>
             <table>

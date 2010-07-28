@@ -102,6 +102,7 @@
     <Content Include="Scripts\base.js" />
     <Content Include="Scripts\jqModal.js" />
     <Content Include="Scripts\jquery.js" />
+    <Content Include="Views\Action\BatchNew.aspx" />
     <Content Include="Views\Action\New.aspx" />
     <Content Include="Views\Home\Display.aspx" />
     <Content Include="Views\Home\Index.aspx" />

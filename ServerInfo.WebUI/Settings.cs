@@ -24,5 +24,14 @@ namespace ServerInfo.WebUI
                 return XmlSettings.Display.FlipDisplay(System.Web.HttpContext.Current.Server.MapPath(DataPaths.Settings), key);
             }
         }
+
+        public static class ServerSummaries
+        {
+            public static void NewIps(IEnumerable<string> ips)
+            {
+                if(ips != null && ips.Count() > 0)
+                    Data.NewServerSummaries(ips, System.Web.HttpContext.Current.Server.MapPath(DataPaths.Servers));
+            }
+        }
     }
 }

@@ -49,13 +49,15 @@
             <ul class="list_vertical">
                 <li><%= Html.ActionLink("refresh", "Refresh") %></li>
                 <li><%= Html.ActionLink("new ip", "New", "Action", null, new { id="aNew", @class="newIp" })  %></li>
+                <li><%= Html.ActionLink("multiple new ips", "BatchNew", "Action", null, new { id="aNews", @class="newIps" })  %></li>
             </ul>
         </fieldset>
     </div>
 
     <div id="test"></div>
-
+    
     <div id="modal" class="jqmWindow">loading...</div>
+    <div id="modalIps" class="jqmWindow">loading...</div>
     
     <div id="newOwner" class="jqmWindow">
         <div>
@@ -74,8 +76,15 @@
     <script type="text/javascript">
         $().ready(function () {
             $('#modal').jqm({
-                ajax: '/Action/New',
+                ajax: '<%= Url.Action("New", "Action") %>',
                 trigger: $('.newIp'),
+                onShow: function (h) { h.w.slideDown(); },
+                onHide: function (h) { h.w.slideUp('medium', function () { if (h.o) h.o.remove(); }); }
+            });
+
+            $('#modalIps').jqm({
+                ajax: '<%= Url.Action("BatchNew", "Action") %>',
+                trigger: $('.newIps'),
                 onShow: function (h) { h.w.slideDown(); },
                 onHide: function (h) { h.w.slideUp('medium', function () { if (h.o) h.o.remove(); }); }
             });

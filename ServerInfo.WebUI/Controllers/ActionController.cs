@@ -18,6 +18,11 @@ namespace ServerInfo.WebUI.Controllers
             return View();
         }
 
+        public ActionResult BatchNew()
+        {
+            return View();
+        }
+
 
         // POST: /Action/New
         [HttpPost]
@@ -35,56 +40,19 @@ namespace ServerInfo.WebUI.Controllers
             return RedirectToAction("Refresh", "Home");
         }
         
-        //
-        // GET: /Action/Edit/5
- 
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        //
-        // POST: /Action/Edit/5
-
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult BatchNew(FormCollection form)
         {
             try
             {
-                // TODO: Add update logic here
- 
-                return RedirectToAction("Index");
+                Settings.ServerSummaries.NewIps(form["Ips"].EnumerateSearchString(true));
+                TempData.AddSuccess("new ips successfully added to system");
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                TempData.AddError(ex.Message);
             }
-        }
-
-        //
-        // GET: /Action/Delete/5
- 
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        //
-        // POST: /Action/Delete/5
-
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
- 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Refresh", "Home");
         }
     }
 }

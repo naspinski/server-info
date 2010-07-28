@@ -10,6 +10,12 @@ namespace ServerInfo.DomainModel.XmlInterface
 {
     public static class Data
     {
+        public static void NewServerSummaries(IEnumerable<string> ips, string pathToServerFile)
+        {
+            foreach (string ip in ips.Distinct().Where(x => !string.IsNullOrWhiteSpace(x)))
+                NewServerSummary(ip, new List<string>(), pathToServerFile);
+        }
+
         public static void NewServerSummary(string ip, IEnumerable<string> owners, string pathToServerFile)
         {
             ServerSummary server = new ServerSummary(ip, owners);

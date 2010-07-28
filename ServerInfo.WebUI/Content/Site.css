@@ -69,8 +69,8 @@ legend { font-family:Georgia; font-size:1.5em; cursor:default; }
     
 #main { padding:0; background-color: #fff; _height: 1px; clear:both; -webkit-box-shadow: 5px 5px 5px #666; -moz-box-shadow: 5px 5px 5px #666; box-shadow: 5px 5px 5px #666;}
 #main, .jqmWindow, #sidebar {-webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; }
-#content { width:83%; float:left; }
-#sidebar { background:#ddd; margin:-5px 0 0 0; height:100%; width:15%; float:right; -webkit-box-shadow: 3px 3px 3px #666; -moz-box-shadow: 3px 3px 3px #666; box-shadow: 3px 3px 3px #666;}
+#content { width:78%; float:left; }
+#sidebar { background:#ddd; margin:-5px 0 0 0; height:100%; width:20%; float:right; -webkit-box-shadow: 3px 3px 3px #666; -moz-box-shadow: 3px 3px 3px #666; box-shadow: 3px 3px 3px #666;}
     #tagFilter { font-size:.8em; float:right; padding:0; padding:3px; }
 #footer { color: #666; padding:10px 0; text-align: center; line-height: normal; margin: 0; font-size: .9em; }
 

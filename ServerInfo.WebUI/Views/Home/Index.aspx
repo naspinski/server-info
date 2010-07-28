@@ -53,7 +53,7 @@
             <ul class="list_vertical">
                 <li><%= Html.ActionLink("refresh", "Refresh") %></li>
                 <li><%= Html.ActionLink("new ip", "New", "Action", null, new { id="aNew", @class="newIp" })  %></li>
-                <li><%= Html.ActionLink("multiple new ips", "BatchNew", "Action", null, new { id="aNews", @class="newIps" })  %></li>
+                <li><%= Html.ActionLink("many new ips", "BatchNew", "Action", null, new { id="aNews", @class="newIps" })  %></li>
             </ul>
         </fieldset>
     </div>
